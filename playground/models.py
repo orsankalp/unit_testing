@@ -7,13 +7,6 @@ class MVRS_Category(models.Model):
 class MVRS_Cars(models.Model):
     MVRS_cat_name = models.CharField(max_length=100)
     MVRS_cat_description =models.TextField()
-class Booking(models.Model):
-    client_name = models.CharField(max_length=255)
-    client_phone = models.CharField(max_length=10)
-    client_email =models.EmailField()
-    select_vehicle = models.CharField(max_length=255)
-    period_from = models.DateField()
-    period_to = models.DateField()
 class contact(models.Model):
     client_id  = models.CharField(max_length=255)
     client_phone = models.CharField(max_length=10)
