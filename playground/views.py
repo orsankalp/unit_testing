@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import MVRS_Category
+from .models import Cars
+from .forms import BookingForm
 from .forms import contactForm
 # Create your views here.
 def calculate():
@@ -15,11 +17,23 @@ def about(request):
     #return HttpResponse("about page")
     return render(request,'about.html')
 def booking(request):
-    return HttpResponse("booking page")
-    #return render(request,'bookings.html',dict_form)
+    if request.method == "POST":
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,'confirm.html')
+    form = BookingForm()
+    dict_form={ 
+        'form':form
+    }
+    #return HttpResponse("booking page")
+    return render(request,'bookings.html',dict_form)
 def cars(request):
+    dict_cars={ 
+        'cars': Cars.objects.all()
+    }
     #return HttpResponse("cars page")
-    return render(request,'cars.html')
+    return render(request,'cars.html',dict_cars)
 def contact(request):
     if request.method == "POST":
         form = contactForm(request.POST)

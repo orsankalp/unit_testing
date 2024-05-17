@@ -137,3 +137,5 @@ STATICFILES_DIRS =[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_ROOT = BASE_DIR / 'uploads'
+MEDIA_URL = '/media/'
