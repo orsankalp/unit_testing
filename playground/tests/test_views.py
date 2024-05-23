@@ -1,9 +1,13 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from playground.models import MVRS_Category, Cars, Booking, contact
+from playground.models import Booking
+from playground.forms import BookingForm
 import json
 
+
+
 class TestViews(TestCase):
+<<<<<<< HEAD
   def test_project_home_GET(self):
     client = Client()
     response = client.get(reverse('home'))
