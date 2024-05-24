@@ -1,6 +1,10 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
+<<<<<<< HEAD
 from playground.views import home, about, booking, cars, contact, category, help
+=======
+from playground.views import home
+>>>>>>> target/master
 
 
 class TestUrls(SimpleTestCase):
@@ -8,6 +12,7 @@ class TestUrls(SimpleTestCase):
     def test_home_joy_url_is_resolved(self):
         url = reverse('home')
         print(resolve(url))
+<<<<<<< HEAD
         ##self.assertEquals(resolve(url).func, home)
         self.assertEqual(resolve(url).func, home)
     def test_about_joy_url_is_resolved(self):
@@ -40,3 +45,6 @@ class TestUrls(SimpleTestCase):
         print(resolve(url))
         ##self.assertEquals(resolve(url).func, home)
         self.assertEqual(resolve(url).func, help)
+=======
+        self.assertEquals(resolve(url).func, home)
+>>>>>>> target/master

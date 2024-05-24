@@ -7,6 +7,7 @@ import json
 
 
 class TestViews(TestCase):
+<<<<<<< HEAD
 
   def test_project_home_GET(self):
     client = Client()
@@ -44,3 +45,19 @@ class TestViews(TestCase):
     self.assertEqual(response.status_code, 200)
     self.assertTemplateUsed(response, 'category.html' )
   
+=======
+    def setUp(self):
+        self.client = Client()
+        self.booking_url = reverse('booking')
+    def test_project_home_GET(self):
+        response = self.client.get(reverse('home'))
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'index.html','base.html' )
+    def test_booking_POST_valid(self):
+        response = self.client.post(self.booking_url, {
+            'client_name': 'nimsha', # replace with actual form fields
+            'client_phone': ''
+        })
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'confirm.html')
+>>>>>>> target/master
