@@ -7,7 +7,7 @@ import json
 
 
 class TestViews(TestCase):
-<<<<<<< HEAD
+
   def test_project_home_GET(self):
     client = Client()
     response = client.get(reverse('home'))
